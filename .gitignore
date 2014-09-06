@@ -54,3 +54,4 @@ docs/_build/
 
 # Local:
 knyght/settings.py
+db.sqlite3
