@@ -9,7 +9,7 @@ class Page(MPTTModel):
     slug = models.SlugField(max_length=64)
     url = models.CharField(max_length=255, blank=True, unique=True)
     icon = models.CharField(max_length=30)
-    content = models.TextField()
+    content = models.TextField(blank=True)
     position = models.PositiveSmallIntegerField()
     parent = TreeForeignKey('self', null=True, blank=True,
                             related_name='children')
