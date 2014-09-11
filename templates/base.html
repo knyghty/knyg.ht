@@ -15,7 +15,6 @@
                     {% if not node.is_leaf_node %}
                         <li class="folder">
                             <input type="checkbox" id="nav-{{ node.slug }}" {% if not node.parent %}checked{% endif %}>
-                            <span></span>
                             <label for="nav-{{ node.slug }}"><span class="{{ node.icon }}"></span> {{ node.title }}</label>
                             <ul>
                                 {{ children }}
