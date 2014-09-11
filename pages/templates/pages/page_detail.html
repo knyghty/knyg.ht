@@ -1,1 +1,7 @@
-{{ page.content|safe }}
+{% extends 'base.html' %}
+
+{% block title %}{% if page.url %}{{ page.title }} &mdash; {% endif %}{{ block.super }}{% endblock %}
+
+{% block content %}
+    {{ page.content|safe }}
+{% endblock %}

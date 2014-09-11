@@ -91,25 +91,23 @@ p {
 					}
 				}
 
-				&:before {
-					font-family: 'FontAwesome';
-					content: '\f07b';
-					margin-right: 10px;
+				& > span {
+					width: 20px;
 				}
 			}
 
 			input[type=checkbox] {
 				display: none;
 
-				&~ span:before {
+				& ~ label:before {
 					display: inline-block;
 					width: 1px;
-					margin-right: 10px;
+					margin-right: 16px;
 					font-family: 'FontAwesome';
 					content: '\f0da';
 				}
 
-				&:checked ~ span:before {
+				&:checked ~ label:before {
 					width: 1px;
 					content: '\f0d7';
 				}
