@@ -92,8 +92,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/common'),
 )
 
-STATIC_URL = '/static/'
-STATIC_ROOT = '/usr/local/www/static/knyg.ht/'
+STATIC_URL = '/'
+STATIC_ROOT = '/usr/local/www/static/'
 
 
 # Templates
