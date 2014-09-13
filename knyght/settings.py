@@ -101,6 +101,7 @@ STATICFILES_DIRS = (
 )
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/usr/local/www/static/knyg.ht/'
 
 
 # Templates
