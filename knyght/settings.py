@@ -1,9 +1,7 @@
 import os
 
-from django.conf.global_settings import (
-    TEMPLATE_CONTEXT_PROCESSORS as TCP,
-    MIDDLEWARE_CLASSES as MC,
-)
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -56,6 +54,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
 )
 
 ROOT_URLCONF = 'knyght.urls'
@@ -70,13 +69,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-
-# Middleware
-
-MIDDLEWARE_CLASSES = MC + (
-    'django.middleware.common.BrokenLinkEmailsMiddleware',
-)
 
 
 # Context Processors
