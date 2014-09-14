@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <header>
+        <p>===========</p>
+        <h1>&nbsp;Not Found</h1>
+        <p>===========</p>
+    </header>
+
+    <p>&nbsp;</p>
+    <p>The page you requested does not exist. Sorry about that.</p>
+    <p>&nbsp;</p>
+    <p>Maybe you'd like to try the <a href="{% url 'home' %}">home page</a>?</p>
+    <p>&nbsp;</p>
+{% endblock %}
