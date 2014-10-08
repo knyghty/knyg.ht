@@ -107,8 +107,6 @@ STATIC_ROOT = '/usr/local/www/static/'
 
 # Pipeline
 
-PIPELINE_LESS_ARGUMENTS = '--clean-css'
-
 PIPELINE_COMPILERS = (
     'pipeline.compilers.less.LessCompiler',
 )
