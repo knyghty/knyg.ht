@@ -5,8 +5,8 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = ['.knyg.ht']
 APPEND_SLASH = False
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mptt',
+    'pipeline',
     'pages',
 )
 
@@ -88,12 +89,39 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+)
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/common'),
 )
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/usr/local/www/static/'
+
+
+# Pipeline
+
+PIPELINE_LESS_ARGUMENTS = '--clean-css'
+
+PIPELINE_COMPILERS = (
+    'pipeline.compilers.less.LessCompiler',
+)
+
+PIPELINE_CSS = {
+    'main': {
+        'source_filenames': (
+            os.path.join('less', 'normalise.less'),
+            os.path.join('less', 'main.less'),
+        ),
+        'output_filename': os.path.join('css', 'main.css')
+    }
+}
 
 
 # Templates
