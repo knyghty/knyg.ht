@@ -92,7 +92,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+STATICFILES_STORAGE = 'knyght.storage.GZIPCachedStorage'
 
 STATICFILES_FINDERS = (
     'pipeline.finders.FileSystemFinder',
