@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'manifesto',
     'mptt',
     'pipeline',
     'pages',
@@ -113,7 +114,6 @@ PIPELINE_COMPILERS = (
 )
 
 PIPELINE_CSS = {
-
     'main': {
         'source_filenames': (
             os.path.join('less', 'normalise.less'),
