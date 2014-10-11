@@ -119,7 +119,7 @@ PIPELINE_CSS = {
             os.path.join('less', 'normalise.less'),
             os.path.join('less', 'main.less'),
         ),
-        'output_filename': os.path.join('css', 'main.css')
+        'output_filename': os.path.join('css', 'style.css')
     }
 }
 
