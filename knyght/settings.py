@@ -5,8 +5,8 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-DEBUG = True
-TEMPLATE_DEBUG = True
+DEBUG = False
+TEMPLATE_DEBUG = False
 ALLOWED_HOSTS = ['.knyg.ht']
 APPEND_SLASH = False
 
@@ -119,7 +119,7 @@ PIPELINE_CSS = {
             os.path.join('less', 'normalise.less'),
             os.path.join('less', 'main.less'),
         ),
-        'output_filename': os.path.join('css', 'style.css')
+        'output_filename': os.path.join('css', 'main.css')
     }
 }
 
