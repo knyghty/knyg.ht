@@ -92,9 +92,10 @@ USE_TZ = True
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.FileSystemFinder',
+    'pipeline.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
+    'pipeline.finders.CachedFileFinder',
 )
 
 STATICFILES_DIRS = (
@@ -112,6 +113,7 @@ PIPELINE_COMPILERS = (
 )
 
 PIPELINE_CSS = {
+
     'main': {
         'source_filenames': (
             os.path.join('less', 'normalise.less'),
